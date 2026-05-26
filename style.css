@@ -1,0 +1,120 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Body spacing for fixed navbar */
+body {
+  padding-top: 70px;
+  background-color: #f4f4f4;
+}
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;
+  padding: 15px 30px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Nav links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #00bcd4;
+}
+
+/* Hamburger (hidden on desktop) */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Sections */
+.section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  border-bottom: 1px solid #ddd;
+  scroll-margin-top: 80px;
+}
+
+.section h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.section p {
+  font-size: 18px;
+  color: #333;
+  max-width: 600px;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+  /* Show hamburger */
+  .hamburger {
+    display: block;
+  }
+
+  /* Mobile menu */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #222;
+    width: 220px;
+    padding: 20px;
+    border-radius: 0 0 0 10px;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  /* Active menu */
+  .nav-links.active {
+    display: flex;
+  }
+}

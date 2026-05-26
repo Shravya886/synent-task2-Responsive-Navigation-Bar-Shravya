@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+
+  <div class="logo">
+    MyLogo
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <div class="hamburger">
+    ☰
+  </div>
+
+</nav>
+
+<!-- Sections -->
+<section id="home" class="section">
+  <h1>Home</h1>
+  <p>Welcome to my website. This is the home section.</p>
+</section>
+
+<section id="about" class="section">
+  <h1>About</h1>
+  <p>I am a web developer learning HTML, CSS and JavaScript.</p>
+</section>
+
+<section id="services" class="section">
+  <h1>Services</h1>
+  <p>I can build simple websites and responsive layouts.</p>
+</section>
+
+<section id="contact" class="section">
+  <h1>Contact</h1>
+  <p>Email: m.shravya99088@gmail.com</p>
+</section>
+
+<!-- JavaScript -->
+<script>
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+  const links = document.querySelectorAll(".nav-links a");
+
+  // Toggle menu
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+  // Close menu when clicking a link (IMPORTANT FIX)
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+    });
+  });
+</script>
+
+</body>
+</html>
